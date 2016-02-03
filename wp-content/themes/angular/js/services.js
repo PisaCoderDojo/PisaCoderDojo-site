@@ -1,79 +1,56 @@
 (function() {
   "use strict";
+  const LEGACY_API = '/legacy_api';
+  const WP_API = '/wp-json/wp/v2';
 
   angular.module('coderDojoServices', [])
-    .factory('newsService', ['$http', 'tokenService', function($http, tokenService) {
+    .factory('newsService', ['$http', function($http) {
       return {
         getNews: function(tag) {
           return $http({
             method: 'GET',
-            url: (tag ? '/api/news?tag=' + tag : '/api/news')
+            url: (tag ? WP_API+'/tags/' + tag : WP_API+'/posts')
           });
         },
-        getNew: function(id) {
+        getNew: function(slug) {
           return $http({
             method: 'GET',
-            url: '/api/news/' + id
-          });
-        },
-        modNews: function(id, news) {
-          news.token = tokenService.get();
-          return $http({
-            method: 'PUT',
-            url: '/api/news/' + id,
-            data: news
-          });
-        },
-        addNews: function(news) {
-          news.token = tokenService.get();
-          return $http({
-            method: 'POST',
-            url: '/api/news',
-            data: news
+            url: WP_API+'/posts?slug=' + slug
           });
         },
         searchNews: function(text) {
           return $http({
             method: 'GET',
-            url: 'api/news?search=' + text
-          });
-        },
-        delNews: function(id) {
-          return $http({
-            method: 'DELETE',
-            url: '/api/news/' + id,
-            data: {
-              token: tokenService.get()
-            }
+            url: 'posts?search=' + text
           });
         },
         getTags: function() {
           return $http({
             method: 'GET',
-            url: '/api/tags'
+            url: WP_API+'/tags'
           });
         }
       };
     }])
-    .factory('resourceService', ['$http', 'tokenService', function($http, tokenService) {
+    .factory('resourceService', ['$http', function($http, tokenService) {
       return {
         getResources: function(cat) {
           return $http({
             method: 'GET',
-            url: '/api/resources?category=' + cat
+            url: LEGACY_API+'/resources?category=' + cat
           });
         },
         getResource: function(id) {
           return $http({
             method: 'GET',
-            url: '/api/resources/' + id
+            url: LEGACY_API+'/resources/' + id
           });
         },
         addResource: function(resource) {
           resource.token = tokenService.get();
           return $http({
             method: 'POST',
-            url: '/api/resources',
+            url: LEGACY_API+'/resources',
             data: resource
           });
         },
@@ -81,14 +58,14 @@
           res.token = tokenService.get();
           return $http({
             method: 'PUT',
-            url: '/api/resources/' + id,
+            url: LEGACY_API+'/resources/' + id,
             data: res
           });
         },
         delResource: function(id) {
           return $http({
             method: 'DELETE',
-            url: '/api/resources/' + id,
+            url: LEGACY_API+'/resources/' + id,
             data: {
               token: tokenService.get()
             }
@@ -101,21 +78,21 @@
         getCategory: function() {
           return $http({
             method: 'GET',
-            url: '/api/category'
+            url: LEGACY_API+'/category'
           });
         },
         addCategory: function(cat) {
           cat.token = tokenService.get();
           return $http({
             method: 'POST',
-            url: '/api/category',
+            url: LEGACY_API+'/category',
             data: cat
           });
         },
         delCategory: function(id) {
           return $http({
             method: 'DELETE',
-            url: '/api/category/' + id,
+            url: LEGACY_API+'/category/' + id,
             data: {
               token: tokenService.get()
             }
@@ -125,7 +102,7 @@
           cat.token = tokenService.get();
           return $http({
             method: 'PUT',
-            url: '/api/category/' + id,
+            url: LEGACY_API+'/category/' + id,
             data: cat
           });
         }
@@ -158,7 +135,7 @@
         send: function(mail, subject, text) {
           return $http({
             method: 'POST',
-            url: 'api/sendmail',
+            url: LEGACY_API+'/sendmail',
             data: {
               mail: mail,
               subject: subject,
@@ -187,7 +164,7 @@
         upload: function(img) {
           return $http({
             method: 'POST',
-            url: '/api/photo',
+            url: LEGACY_API+'/photo',
             data: {
               img: img,
               token: tokenService.get()
@@ -201,13 +178,13 @@
         getAlbums: function() {
           return $http({
             method: 'GET',
-            url: '/api/album'
+            url: LEGACY_API+'/album'
           });
         },
         getAlbum: function(id) {
           return $http({
             method: 'GET',
-            url: '/api/album/' + id
+            url: LEGACY_API+'/album/' + id
           });
         }
       };
@@ -217,7 +194,7 @@
         login: function(pass) {
           return $http({
             method: 'POST',
-            url: '/api/login',
+            url: LEGACY_API+'/login',
             data: {
               'password': pass
             }

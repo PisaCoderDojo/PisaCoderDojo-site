@@ -13,6 +13,7 @@
 var myApp = angular.module('PisaCoderDojo', [
     'ngRoute',
     'ngProgress',
+    'ngCookies',
     'ngSanitize',
     'coderDojoControllers',
     'coderDojoServices',
@@ -119,10 +120,10 @@ var myApp = angular.module('PisaCoderDojo', [
           controller: 'aboutCtrl',
           resolve: {
             actualMentors: function($http) {
-              return $http.get('json/mentors-actual.json');
+              return $http.get(myLocalized.json + '/mentors-actual.json');
             },
             oldMentors: function($http) {
-              return $http.get('json/mentors-old.json');
+              return $http.get(myLocalized.json + '/mentors-old.json');
             }
           }
         })
@@ -173,13 +174,9 @@ var myApp = angular.module('PisaCoderDojo', [
     });
   }]);
 
-  myApp.controller('menuController', ['$scope', '$http',
-    function($scope, $http) {
-      $http({
-          method: 'GET',
-          url: '/api/category'
-        })
-        .success(function(data) {
+  myApp.controller('menuController', ['$scope', 'categoryService',
+    function($scope, categoryService) {
+      categoryService.getCategory().success(function(data) {
           $scope.category = data;
         });
     }

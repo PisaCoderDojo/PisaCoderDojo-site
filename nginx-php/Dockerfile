@@ -29,7 +29,7 @@ rm -rf /usr/share/man/?? && \
 rm -rf /usr/share/man/??_*
 
 # tweak nginx config
-RUN sed -i -e"s/worker_processes  1/worker_processes 5/" /etc/nginx/nginx.conf && \
+RUN sed -i -e "s/worker_processes  1/worker_processes 5/" /etc/nginx/nginx.conf && \
 sed -i -e "s/keepalive_timeout\s*65/keepalive_timeout 2/" /etc/nginx/nginx.conf && \
 sed -i -e "s/keepalive_timeout 2/keepalive_timeout 2;\n\tclient_max_body_size 100m/" /etc/nginx/nginx.conf && \
 echo "daemon off;" >> /etc/nginx/nginx.conf
@@ -77,7 +77,7 @@ VOLUME ["/usr/share/nginx/html"]
 
 # add test PHP file
 # ADD ./index.php /usr/share/nginx/html/index.php
-# RUN chown -Rf www-data.www-data /usr/share/nginx/html/
+RUN chown -Rf www-data:www-data /usr/share/nginx/html/
 
 # Expose Ports
 EXPOSE 443

@@ -1,4 +1,6 @@
 <?php
+include('theme-config.php');
+
 function my_scripts() {
 	//CSS LIBRARY
 	wp_enqueue_style(
@@ -42,6 +44,10 @@ function my_scripts() {
 	wp_enqueue_script(
 		'angularjs-sanitize',
 		get_stylesheet_directory_uri() . '/lib/js/angular-sanitize.min.js'
+	);
+	wp_enqueue_script(
+		'angularjs-cookies',
+		get_stylesheet_directory_uri() . '/lib/js/angular-cookies.min.js'
 	);
 	wp_enqueue_script(
 		'angulike',
@@ -88,8 +94,12 @@ function my_scripts() {
 
 	//MY CSS
 	wp_enqueue_style(
+		'style',
+		get_stylesheet_directory_uri() . '/style.css'
+	);
+	wp_enqueue_style(
 		'mailchimp',
-		get_stylesheet_directory_uri() . '/css/style.css'
+		get_stylesheet_directory_uri() . '/css/mailchimp.css'
 	);
 
 	//MY SCRIPT
@@ -115,7 +125,10 @@ function my_scripts() {
 		'myLocalized',
 		array(
 			'partials' => trailingslashit( get_template_directory_uri() ) . 'partials/',
-			'img' => trailingslashit( get_template_directory_uri() ) . 'img/'
+			'img' => trailingslashit( get_template_directory_uri() ) . 'img/',
+			'json' => trailingslashit( get_template_directory_uri() ) . 'json/',
+			'eb' => array('url' => EVENTBRITE_URL,
+										'date' => EVENTBRITE_DATE)
 			)
 	);
 }

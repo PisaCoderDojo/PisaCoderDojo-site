@@ -9,9 +9,9 @@
           $scope.eventIsSet = $scope.nextEvent>=0;
         });
         */
-        var data = new Date('2015-12-10');
+        var data = new Date(myLocalized.eb.date);
         var now = new Date().getTime();
-        $scope.eventBrite = 'https://www.eventbrite.it/e/biglietti-pisa-coderdojo-12-19854207469?ref=elink';
+        $scope.eventBrite = myLocalized.eb.url;
         $scope.nextEvent = Math.floor((data - now) / (1000 * 60 * 60 * 24));
         $scope.eventIsSet = $scope.nextEvent >= 0;
       }
@@ -20,6 +20,7 @@
       function($scope, news, tags, $route, $timeout, $http, ngProgress, TitleService, newsService) {
         $scope.BASE_URL = "http://pisa.coderdojo.it/news/";
         $scope.news = news.data;
+        console.log($scope.news);
         $scope.tags = tags.data;
         $scope.currentTag = $route.current.params.tag || -1;
         if ($scope.currentTag != -1)
@@ -62,8 +63,9 @@
     .controller('newCtrl', ['$scope', 'news', '$location', 'TitleService',
       function($scope, news, $location, TitleService) {
         $scope.BASE_URL = "http://pisa.coderdojo.it/news/";
-        news = news.data;
-        TitleService.set(news.title);
+        news = news.data[0];
+        console.log(news);
+        TitleService.set(news.title.rendered);
         if (news === undefined)
           $location.path('/news');
         else {
@@ -100,6 +102,9 @@
     ])
     .controller('aboutCtrl', ['$scope', 'actualMentors', 'oldMentors',
       function($scope, actualMentors, oldMentors) {
+        $scope.getImgUrl = function(name){
+          return myLocalized.img + 'personal/' + name;
+        };
         $scope.people = actualMentors.data;
         $scope.peopleOld = oldMentors.data;
         $scope.formatDate = function(date) {
@@ -208,21 +213,15 @@
         };
       }
     ])
-    .controller('contactCtrl', ['$scope', '$http',
-      function($scope, $http) {
+    .controller('contactCtrl', ['$scope', 'mailService',
+      function($scope, mailService) {
         $scope.isSend = false;
         $scope.send = function() {
           //console.log($scope.mail+' '+$scope.subject+' '+$scope.text);
-          $http({
-            method: 'POST',
-            url: 'api/sendmail',
-            data: {
-              'mail': $scope.mail,
-              'subject': $scope.subject,
-              'text': $scope.text
-            }
-          }).success(function(data) {
-            //console.log(data);
+          mailService.send($scope.mail,
+                           $scope.subject,
+                           $scope.text
+          ).success(function(data) {
             if (data == 'true')
               $scope.isSend = true;
           });

@@ -4,7 +4,7 @@
     <div ng-repeat="p in people" class="about-profile">
       <div class="row">
         <div class="col-sm-3">
-          <img ng-src="{{p.img}}" class="img-circle img-responsive"></img>
+          <img ng-src="{{getImgUrl(p.img)}}" class="img-circle img-responsive"></img>
         </div>
         <div class="col-sm-9">
           <h3 ng-bind="p.name"></h3>
@@ -30,7 +30,7 @@
     <div ng-repeat="p in peopleOld" class="about-profile">
       <div class="row">
         <div class="col-sm-3">
-          <img ng-src="{{p.img}}" class="img-circle img-responsive"></img>
+          <img ng-src="{{getImgUrl(p.img)}}" class="img-circle img-responsive"></img>
         </div>
         <div class="col-sm-9">
           <h3 ng-bind="p.name"></h3>
