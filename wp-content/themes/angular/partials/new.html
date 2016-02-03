@@ -1,0 +1,37 @@
+<div class="container container-fluid">
+  <h2 class="blog-post-title" ng-bind="new.title"></h2>
+  <div class="row">
+    <div class="blog-post-meta col-sm-6">
+      <span class="glyphicon glyphicon-user"></span>
+      <span ng-bind="new.author"></span>
+      <span class="glyphicon glyphicon-time"></span>
+      <span ng-bind="new.creation_date | date:'medium'"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="blog-post-social col-xs-5">
+      <span fb-like="BASE_URL+new.id"></span>
+    </div>
+    <div class="blog-post-social col-xs-2">
+      <span tweet="new.title"></span>
+    </div>
+  </div>
+  </br>
+  <div ng-bind-html="new.body"></div>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'pisacoderdojo';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>

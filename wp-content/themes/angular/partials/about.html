@@ -1,0 +1,65 @@
+<div class="container container-fluid">
+  <div class="about-actual">
+    <h2>I Mentori</h2>
+    <div ng-repeat="p in people" class="about-profile">
+      <div class="row">
+        <div class="col-sm-3">
+          <img ng-src="{{p.img}}" class="img-circle img-responsive"></img>
+        </div>
+        <div class="col-sm-9">
+          <h3 ng-bind="p.name"></h3>
+          <span ng-bind="p.text" class="text-justify"></span>
+        </div>
+      </div>
+      <!--
+      <div class="row">
+        <h3 ng-bind="p.name" class="col-sm-9 col-sm-offset-3"></h3>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <img ng-src="{{p.img}}" class="img-circle img-responsive img-profile"></img>
+        </div>
+        <div class="col-sm-9">
+          <span ng-bind="p.text" class="text-justify"></span>
+        </div>
+      </div>-->
+    </div>
+  </div>
+  <div class="about-old">
+    <h2>Hanno collaborato con noi</h2>
+    <div ng-repeat="p in peopleOld" class="about-profile">
+      <div class="row">
+        <div class="col-sm-3">
+          <img ng-src="{{p.img}}" class="img-circle img-responsive"></img>
+        </div>
+        <div class="col-sm-9">
+          <h3 ng-bind="p.name"></h3>
+          <span ng-bind="p.text" class="text-justify"></span>
+          <span ng-bind="formatDate(p.date)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="row padding">
+    <div class="col-sm-3">
+      <img src="img/personal/davide.jpg" class="img-circle img-responsive img-profile"></img>
+    </div>
+    <div class="col-sm-9">
+      <h3>Davide Neri</h3>
+      <p class="text-justify">Studia Informatica e Networking all'Università di Pisa e alla Scuola Superiore Sant'anna. Va bè te lo mando.
+      </p>
+    </div>
+  </div>
+  <div class="row padding">
+    <div class="col-sm-2">
+      <img src="img/personal/luca.jpg" class="img-circle img-responsive img-profile"></img>
+    </div>
+    <div class="col-sm-7">
+      <h3>Luca Rinaldi</h3>
+      <p class="text-justify">Studia Informatica e Networking all'Università di Pisa e alla Scuola Superiore Sant'anna. Originario delle marche il suo sogno nella vita lavorare nel campo dei servizi web.
+      </p>
+    </div>
+  </div>
+  -->
+</div>

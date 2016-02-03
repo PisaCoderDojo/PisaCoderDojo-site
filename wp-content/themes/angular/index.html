@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="PisaCoderDojo">
+<html ng-app="coderDojo">
 
   <head ng-controller="titleController">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -33,7 +33,15 @@
     <base href="/">
 
     <title ng-bind="title.get()"></title>
-    <?php wp_head(); ?>
+
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lib/css/bootstrap-social.css" rel="stylesheet" />
+    <link href="lib/css/ngProgress.css" rel="stylesheet" />
+    <link href="lib/css/blueimp-gallery.min.css" rel="stylesheet" />
+
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/mailchimp.css" rel="stylesheet" />
     <meta name="google-site-verification" content="AegUVUn84bKxjWMcMjmNLD9gxwyD0C_8TSASoJg7Yis" />
   </head>
 
@@ -49,7 +57,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href=".">
-            <img style="height: 50px;" class="img-responsive" src="<?php bloginfo('template_directory'); ?>/img/banner-web_x2.png" />
+            <img style="height: 50px;" class="img-responsive" src="img/banner-web_x2.png" />
           </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -140,7 +148,7 @@
       </div>
       <div class="container">
         <div class="text-muted">Le nostre collaborazioni</div>
-        <img class="img-responsive img-col" src="<?php bloginfo('template_directory'); ?>/img/loghi.png" />
+        <img class="img-responsive img-col" src="img/loghi.png" />
         <div class="privacy-policy">
           <a href="//www.iubenda.com/privacy-policy/961066" class="iubenda-black iubenda-embed" title="Privacy Policy">Privacy Policy</a>
         </div>
@@ -150,12 +158,41 @@
     <!--FACEBOOK-sdk-->
     <div id="fb-root"></div>
     <!--SCRATCH-->
-    <img id="scratch" src="<?php bloginfo('template_directory'); ?>/img/cat-a.png" />
+    <img id="scratch" src="img/cat-a.png" />
 
     <!--COOKIE BANNER-->
     <script type="text/javascript" id="cookiebanner" src="http://cookiebanner.eu/js/cookiebanner.min.js" data-message="Questo sito o gli strumenti di terze parti che utilizza si avvalgono di cookie necessari al funzionamento e per gli scopi illustrati nella relativa policy; continuando con la navigazione si accetta l'utilizzo di tali cookie. Per maggiori dettagli "
     data-moreinfo="//www.iubenda.com/privacy-policy/961066" data-linkmsg="clicca qui">
     </script>
+    <!--<a href="//www.iubenda.com/privacy-policy/961066" class="iubenda-black iubenda-embed" title="Privacy Policy">Privacy Policy</a>-->
+
+    <!-- JS LIBRARY -->
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/angular-cookies.min.js"></script>
+    <script src="lib/js/angular-sanitize.min.js"></script>
+    <script src="lib/js/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/js/angulike.js"></script>
+    <script src="lib/js/angulartics.min.js"></script>
+    <script src="lib/js/angulartics-google-analytics.min.js"></script>
+    <script src="lib/js/ngprogress.min.js"></script>
+    <script src="lib/js/blueimp-gallery.min.js"></script>
+
+    <!-- JS MAIN -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/scratch.js"></script>
+
+    <!--SERVICE-->
+    <script src="js/third-party/twitter.js"></script>
+    <script src="js/third-party/facebook.js"></script>
+    <script src="js/third-party/google-analystic.js"></script>
+    <script src="js/third-party/iubenda.js"></script>
 
   </body>
+
 </html>

@@ -6,6 +6,9 @@ web:
     - db
   volumes:
     - .:/usr/share/nginx/html
+  environment:
+    TEMPLATE_NGINX_HTML: 0
+    ERRORS: 1
 db:
   image: mysql
   environment:
