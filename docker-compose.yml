@@ -1,0 +1,15 @@
+web:
+  build: ./nginx-php
+  ports:
+    - "8080:80"
+  links:
+    - db
+  volumes:
+    - .:/usr/share/nginx/html
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: rpassword
+    MYSQL_DATABASE: wordpress
+    MYSQL_USER: user
+    MYSQL_PASSWORD: pass
