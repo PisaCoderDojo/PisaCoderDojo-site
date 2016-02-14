@@ -23,13 +23,13 @@
 define('DB_NAME', 'wordpress');
 
 /** MySQL database username */
-define('DB_USER', 'user');
+define('DB_USER', 'dojo');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'pass');
 
 /** MySQL hostname */
-define('DB_HOST', 'dojo_db');
+define('DB_HOST', getenv ('DB_HOST'));
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
