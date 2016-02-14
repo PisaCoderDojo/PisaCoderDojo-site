@@ -24,10 +24,10 @@ var myApp = angular.module('PisaCoderDojo', [
     'ui.bootstrap'
   ]);
 
-  myApp.run(['$rootScope', 'ngProgressFactory', '$location', 'TitleService',
-    function($rootScope, ngProgressFactory, $location, TitleService) {
+  myApp.run(['$rootScope', 'progress', '$location', 'TitleService',
+    function($rootScope, ngProgress, $location, TitleService) {
       //tokenService.copyCookie();
-      var ngProgress = ngProgressFactory.createInstance();
+
       $rootScope.$on('$routeChangeStart', function(data, current) {
         ngProgress.start();
         // console.log(current.$$route.title);
@@ -61,11 +61,18 @@ var myApp = angular.module('PisaCoderDojo', [
           templateUrl: myLocalized.partials + 'news.html',
           controller: 'newsCtrl',
           resolve: {
-            news: function(newsService) {
-              return newsService.getNews();
+            news: function(newsService, $route) {
+              return newsService.getNews($route.current.params.tag,
+                                         $route.current.params.search)
             },
             tags: function(newsService) {
               return newsService.getTags();
+            },
+            selectedtag: function($route){
+              return $route.current.params.tag;
+            },
+            search: function($route){
+              return $route.current.params.search;
             }
           }
         })
@@ -78,7 +85,7 @@ var myApp = angular.module('PisaCoderDojo', [
             }
           }
         })
-        .when('/news/tag/:tag', {
+      /*  .when('/news/tag/:tag', {
           templateUrl: myLocalized.partials + 'news.html',
           controller: 'newsCtrl',
           resolve: {
@@ -89,7 +96,7 @@ var myApp = angular.module('PisaCoderDojo', [
               return newsService.getTags();
             }
           }
-        })
+        })*/
         .when('/resource/:cat', {
           templateUrl: myLocalized.partials + 'resource.html',
           controller: 'resourceCtrl',

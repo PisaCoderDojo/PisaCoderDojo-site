@@ -1,16 +1,23 @@
-web:
+dojo_wp:
   build: ./nginx-php
   ports:
     - "8080:80"
   links:
-    - db
+    - dojo_db
   volumes:
     - .:/usr/share/nginx/html
   environment:
     TEMPLATE_NGINX_HTML: 0
     ERRORS: 1
-db:
+
+dojo_db_data:
   image: mysql
+  entrypoint: /bin/bash
+
+dojo_db:
+  image: mysql
+  volumes_from:
+    - dojo_db_data
   environment:
     MYSQL_ROOT_PASSWORD: rpassword
     MYSQL_DATABASE: wordpress

@@ -6,11 +6,17 @@
   angular.module('coderDojoServices', [])
     .factory('newsService', ['$http', function($http) {
       return {
-        getNews: function(tag) {
-          return $http({
+        getNews: function(tag,search) {
+          var args = {
             method: 'GET',
-            url: (tag ? WP_API+'/tags/' + tag : WP_API+'/posts')
-          });
+            url: WP_API + '/posts'
+          }
+          if (tag || search) args.url = args.url + '?';
+          if (tag)
+            args.url = args.url + 'filter[tag]=' + tag + '&';
+          if (search)
+            args.url = args.url + 'search=' + search;
+          return $http(args);
         },
         getNew: function(slug) {
           return $http({
@@ -18,17 +24,30 @@
             url: WP_API+'/posts?slug=' + slug
           });
         },
-        searchNews: function(text) {
+        /*searchNews: function(text) {
           return $http({
             method: 'GET',
-            url: 'posts?search=' + text
+            url: WP_API + '/posts?search=' + text
           });
-        },
+        },*/
         getTags: function() {
           return $http({
             method: 'GET',
-            url: WP_API+'/tags'
+            url: WP_API + '/tags'
           });
+        }
+      };
+    }])
+    .factory('mediaService', ['$http', function($http) {
+      return {
+        get: function(id) {
+          return $http({
+            method: 'GET',
+            url: WP_API+'/media/'+ id
+          })
+        },
+        getSize: function(media, size) {
+          return media.media_details.sizes[size].source_url;
         }
       };
     }])
@@ -201,6 +220,9 @@
           });
         }
       };
+    }])
+    .factory('progress',['ngProgressFactory', function(ngProgressFactory){
+      return ngProgressFactory.createInstance();
     }])
     .factory('tokenService', ['$cookies', function($cookies) {
       var tokenValue;

@@ -29,7 +29,7 @@ define('DB_USER', 'user');
 define('DB_PASSWORD', 'pass');
 
 /** MySQL hostname */
-define('DB_HOST', 'db');
+define('DB_HOST', 'dojo_db');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');

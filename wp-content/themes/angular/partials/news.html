@@ -21,6 +21,7 @@
         </div>
       </div>
       </br>
+      <img ng-src="{{post.img}}"></img>
       <div ng-bind-html="post.excerpt.rendered" class="blog-post-body"></div>
       <!--<a ng-href="news/{{post.id}}">(continua...)</a>-->
     </div>
@@ -28,7 +29,7 @@
   <div class="col-sm-3">
     <div class="search-bar">
       <h4>Search</h4>
-      <input ng-model="query" ng-keyup="search($event)"></input>
+      <input ng-model="query" ng-focus="isFocused=true" ng-keyup="search($event)"></input>
       <!--Sort by:
       <select ng-model="orderProp">
         <option value="title">Alfabetico</option>
@@ -43,7 +44,7 @@
           <a href="news">Tutti</a>
         </li>
         <li ng-repeat="tag in tags" ng-class="{active : tag.name==currentTag}" role="presentation">
-          <a ng-href="news/tag/{{tag.name}}">{{tag.name}}
+          <a ng-href="news?tag={{tag.name}}">{{tag.name}}
             <span class="badge" ng-bind="tag.count"></span>
           </a>
         </li>
