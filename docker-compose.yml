@@ -1,14 +1,13 @@
 dojo_wp:
-  build: ./nginx-php
+  image: wordpress
   ports:
     - "8080:80"
   links:
-    - dojo_db
+    - dojo_db:mysql
   volumes:
-    - .:/usr/share/nginx/html
-  environment:
-    TEMPLATE_NGINX_HTML: 0
-    ERRORS: 1
+    - "./themes:/var/www/html/wp-content/themes"
+    - "./plugins:/var/www/html/wp-content/plugins"
+    - "./legacy_api:/var/www/html/legacy_api"
 
 dojo_db_data:
   image: mysql
