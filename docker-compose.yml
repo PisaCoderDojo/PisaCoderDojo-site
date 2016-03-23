@@ -5,8 +5,8 @@ dojo_wp:
   links:
     - dojo_db:mysql
   volumes:
-    - "./themes:/var/www/html/wp-content/themes"
-    - "./plugins:/var/www/html/wp-content/plugins"
+    - "./themes/dojo-wp-theme:/var/www/html/wp-content/themes/dojo-wp-theme"
+    - "./plugins/rest-api:/var/www/html/wp-content/plugins/rest-api"
     - "./legacy_api:/var/www/html/legacy_api"
 
 dojo_db_data:
