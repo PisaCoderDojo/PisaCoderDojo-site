@@ -7,21 +7,20 @@
       <div class="row">
         <div class="blog-post-meta col-sm-6">
           <span class="glyphicon glyphicon-user"></span>
-          <span ng-bind="post.author"></span>
+          <span ng-bind="post.author_name"></span>
           <span class="glyphicon glyphicon-time"></span>
           <span ng-bind="post.date | date:'medium'"></span>
         </div>
       </div>
       <div class="row">
         <div class="blog-post-social col-xs-5">
-          <span fb-like></span>
+          <span fb-like="post.link"></span>
         </div>
         <div class="blog-post-social col-xs-2">
-          <span tweet="post.title.rendered"></span>
+          <span tweet="post.title.rendered" tweet-url="post.link"></span>
         </div>
       </div>
-      </br>
-      <img ng-src="{{post.img}}"></img>
+      <img ng-src="{{post.img}}"/>
       <div ng-bind-html="post.excerpt.rendered" class="blog-post-body"></div>
       <!--<a ng-href="news/{{post.id}}">(continua...)</a>-->
     </div>

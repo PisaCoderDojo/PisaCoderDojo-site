@@ -35,8 +35,13 @@
             method: 'GET',
             url: WP_API + '/tags'
           });
-        }
-      };
+        },
+        getAuthor: function(id) {
+          return $http({
+            method: 'GET',
+            url: WP_API + '/users/'+ id
+          });
+        }};
     }])
     .factory('mediaService', ['$http', function($http) {
       return {

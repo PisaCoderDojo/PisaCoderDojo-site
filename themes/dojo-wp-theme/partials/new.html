@@ -3,22 +3,21 @@
   <div class="row">
     <div class="blog-post-meta col-sm-6">
       <span class="glyphicon glyphicon-user"></span>
-      <span ng-bind="new.author"></span>
+      <span ng-bind="new.author_name"></span>
       <span class="glyphicon glyphicon-time"></span>
       <span ng-bind="new.date | date:'medium'"></span>
     </div>
   </div>
   <div class="row">
     <div class="blog-post-social col-xs-5">
-      <span fb-like="BASE_URL+new.id"></span>
+      <span fb-like="new.link"></span>
     </div>
     <div class="blog-post-social col-xs-2">
-      <span tweet="new.title.rendered"></span>
+      <span tweet="new.title.rendered" tweet-url="new.link"></span>
     </div>
   </div>
-  </br>
-  <img ng-src="{{new.img}}"></img>
-  <div ng-bind-html="new.content.rendered"></div>
+  <img ng-src="{{new.img}}"/>
+  <div ng-bind-html="new.content.rendered" class="blog-post-body"></div>
 
   <div id="disqus_thread"></div>
   <script type="text/javascript">

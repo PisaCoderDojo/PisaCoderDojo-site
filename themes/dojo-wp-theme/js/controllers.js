@@ -23,13 +23,21 @@
                 TitleService, newsService, mediaService, selectedtag, search, $location) {
         //$scope.BASE_URL = "http://pisa.coderdojo.it/news/";
         $scope.news = news.data;
+        // for(var i=0; i < $scope.news.length; i++){
+        //   (function(i){
+        //
+        //   }(i));
+        // }
         $scope.query = search;
         console.log($scope.news);
         console.log(selectedtag);
-        for(var i=0;i<$scope.news.length;i++){
+        for(var i=0; i<$scope.news.length; i++){
           (function(i){
             mediaService.get($scope.news[i].featured_media).success(function(data){
               $scope.news[i].img = mediaService.getSize(data, 'medium');
+            });
+            newsService.getAuthor($scope.news[i].author).success(function(data){
+              $scope.news[i].author_name = data.name;
             });
           }(i));
         }
@@ -78,8 +86,8 @@
         };
       }
     ])
-    .controller('newCtrl', ['$scope', 'news', '$location', 'TitleService', 'mediaService',
-      function($scope, news, $location, TitleService, mediaService) {
+    .controller('newCtrl', ['$scope', 'news', '$location', 'TitleService', 'mediaService','newsService',
+      function($scope, news, $location, TitleService, mediaService, newsService) {
         //$scope.BASE_URL = "http://pisa.coderdojo.it/news/";
         news = news.data[0];
         console.log(news);
@@ -88,6 +96,9 @@
           $location.path('/news');
         else {
           $scope.new = news;
+          newsService.getAuthor($scope.new.author).success(function(data){
+            $scope.new.author_name = data.name;
+          });
           mediaService.get($scope.new.featured_media).success(function(data){
             $scope.new.img = mediaService.getSize(data, 'medium_large');
           });

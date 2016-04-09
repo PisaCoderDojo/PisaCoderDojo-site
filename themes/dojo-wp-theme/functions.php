@@ -4,6 +4,11 @@ add_theme_support( 'post-thumbnails' );
 add_image_size( 'medium', 460, 308, true );
 add_image_size( 'medium_large', 700, 500, true );
 
+function my_admin_bar_init() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+}
+add_action('admin_bar_init', 'my_admin_bar_init');
+
 function my_scripts() {
 	//CSS LIBRARY
 	wp_enqueue_style(

@@ -81,8 +81,7 @@
   margin-right: 0;
 }
 .blog-post-body {
-  overflow: hidden;
-  max-height: 420px;
+  margin-top: 10px;
 }
 .blog-post-meta {
   margin-top: -2px;
