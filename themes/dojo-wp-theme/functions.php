@@ -2,7 +2,7 @@
 include('theme-config.php');
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'medium', 460, 308, true );
-add_image_size( 'medium_large', 800, 600, true );
+add_image_size( 'medium_large', 700, 500, true );
 
 function my_scripts() {
 	//CSS LIBRARY

@@ -181,11 +181,15 @@ var myApp = angular.module('PisaCoderDojo', [
     });
   }]);
 
-  myApp.controller('menuController', ['$scope', 'categoryService',
-    function($scope, categoryService) {
+  myApp.controller('menuController', ['$scope', 'categoryService','ninjaService',
+    function($scope, categoryService, ninjaService) {
       categoryService.getCategory().success(function(data) {
           $scope.category = data;
         });
+      $scope.BASE_URL = 'http://pisa.coderdojo.it';
+      ninjaService.get().success(function(data) {
+        $scope.ninja = data;
+      });
     }
   ]);
 

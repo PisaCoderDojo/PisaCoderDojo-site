@@ -208,6 +208,16 @@
         }
       };
     }])
+    .factory('ninjaService', ['$http', function($http) {
+      return {
+        get: function() {
+          return $http({
+            method: 'GET',
+            url: LEGACY_API+'/ninja'
+          });
+        }
+      };
+    }])
     .factory('loginService', ['$http', function($http) {
       return {
         login: function(pass) {

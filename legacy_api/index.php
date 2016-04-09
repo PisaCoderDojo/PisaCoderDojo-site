@@ -33,6 +33,16 @@ $app->group('/album', function() use ($app){
   Photo::create($app);
 });
 
+$app->get('/ninja', function () use ($app) {
+  chdir('../ninja');
+  $ninja = glob('*');
+  $res = array();
+  foreach ($ninja as $n) {
+    array_push($res, ['name' => $n, 'url' => "/ninja/$n/"]);
+  }
+  echo json_encode($res);
+});
+
 $app->post('/login', function () use ($app) {
   $data = json_decode($app->request->getBody());
   $pass = $data->password;
