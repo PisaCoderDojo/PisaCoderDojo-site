@@ -254,6 +254,7 @@
                            $scope.subject,
                            $scope.text
           ).success(function(data) {
+            console.log(data);
             if (data == 'true')
               $scope.isSend = true;
           });
