@@ -68,7 +68,7 @@ $app->post('/sendmail', function() use ($app){
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
   // More headers
-  $headers .= "From: contact-form <noreplay@sfcoding.com>\r\n";
+  //$headers .= "From: no-reply@sfcoding.com\r\n";
   $headers .= 'Reply-To: ' . $data->mail . "\r\n" .
 
   $ris = mail($to,$subject,$message,$headers);
