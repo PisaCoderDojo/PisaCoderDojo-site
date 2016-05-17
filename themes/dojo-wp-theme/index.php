@@ -136,8 +136,10 @@
 
           </div>
           <div class="col-sm-3">
-            <div class="fb-like-box" data-href="https://www.facebook.com/pisacoderdojo" data-width="250" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true">
-            </div>
+            <cookie-law-wait>
+              <div class="fb-like-box" data-href="https://www.facebook.com/pisacoderdojo" data-width="250" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true">
+              </div>
+            </cookie-law-wait>
             <div>
               <a class="btn btn-social-icon btn-lg btn-github" href="https://github.com/PisaCoderDojo">
                 <i class="fa fa-github"></i>
@@ -146,7 +148,9 @@
             </div>
           </div>
           <div class="col-sm-4">
-            <a class="twitter-timeline" href="https://twitter.com/PisaCoderDojo" data-chrome="" data-widget-id="575254844765765632" height="250" width="250">Tweetdi @PisaCoderDojo</a>
+            <cookie-law-wait>
+              <a class="twitter-timeline" href="https://twitter.com/PisaCoderDojo" data-chrome="" data-widget-id="575254844765765632" height="250" width="250">Tweetdi @PisaCoderDojo</a>
+            </cookie-law-wait>
           </div>
         </div>
       </div>
@@ -161,13 +165,22 @@
 
     <!--FACEBOOK-sdk-->
     <div id="fb-root"></div>
+
     <!--SCRATCH-->
     <img id="scratch" src="<?php bloginfo('template_directory'); ?>/img/cat-a.png" />
 
     <!--COOKIE BANNER-->
-    <script type="text/javascript" id="cookiebanner" src="http://cookiebanner.eu/js/cookiebanner.min.js" data-message="Questo sito o gli strumenti di terze parti che utilizza si avvalgono di cookie necessari al funzionamento e per gli scopi illustrati nella relativa policy; continuando con la navigazione si accetta l'utilizzo di tali cookie. Per maggiori dettagli "
+    <!-- <script type="text/javascript" id="cookiebanner" src="http://cookiebanner.eu/js/cookiebanner.min.js" data-message="Questo sito o gli strumenti di terze parti che utilizza si avvalgono di cookie necessari al funzionamento e per gli scopi illustrati nella relativa policy; continuando con la navigazione si accetta l'utilizzo di tali cookie. Per maggiori dettagli "
     data-moreinfo="//www.iubenda.com/privacy-policy/961066" data-linkmsg="clicca qui">
-    </script>
+    </script> -->
+    <cookie-law-banner
+      message="Questo sito o gli strumenti di terze parti che utilizza si avvalgono di cookie necessari al funzionamento e per gli scopi illustrati nella relativa policy"
+      policy-url="http://www.iubenda.com/privacy-policy/961066"
+      policy-button="true"
+      policy-blank="true"
+      element=".footer"
+      accept-text="Ho capito">
+    </cookie-law-banner>
 
   </body>
 </html>

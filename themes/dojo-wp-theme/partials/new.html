@@ -1,37 +1,39 @@
 <div class="container container-fluid">
-  <h2 class="blog-post-title" ng-bind="new.title.rendered"></h2>
-  <div class="row">
-    <div class="blog-post-meta col-sm-6">
-      <span class="glyphicon glyphicon-user"></span>
-      <span ng-bind="new.author_name"></span>
-      <span class="glyphicon glyphicon-time"></span>
-      <span ng-bind="new.date | date:'medium'"></span>
+    <h2 class="blog-post-title" ng-bind="new.title.rendered"></h2>
+    <div class="row">
+        <div class="blog-post-meta col-sm-6">
+            <span class="glyphicon glyphicon-user"></span>
+            <span ng-bind="new.author_name"></span>
+            <span class="glyphicon glyphicon-time"></span>
+            <span ng-bind="new.date | date:'medium'"></span>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="blog-post-social col-xs-5">
-      <span fb-like="new.link"></span>
+    <div class="row">
+        <cookie-law-wait>
+            <div class="blog-post-social col-xs-5">
+                <span fb-like="new.link"></span>
+            </div>
+            <div class="blog-post-social col-xs-2">
+                <span tweet="new.title.rendered" tweet-url="new.link"></span>
+            </div>
+        </cookie-law-wait>
     </div>
-    <div class="blog-post-social col-xs-2">
-      <span tweet="new.title.rendered" tweet-url="new.link"></span>
-    </div>
-  </div>
-  <img ng-src="{{new.img}}"/>
-  <div ng-bind-html="new.content.rendered" class="blog-post-body"></div>
+    <img ng-src="{{new.img}}" />
+    <div ng-bind-html="new.content.rendered" class="blog-post-body"></div>
 
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'pisacoderdojo';
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'pisacoderdojo';
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>

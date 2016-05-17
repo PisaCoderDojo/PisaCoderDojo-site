@@ -22,7 +22,7 @@ bower install
 cp $BASE/angular/angular.min.js $JSLIB
 cp $BASE/angular-route/angular-route.min.js $JSLIB
 cp $BASE/angular-cookies/angular-cookies.min.js $JSLIB
-cp $BASE/angular-sanitize/angular-sanitize.min.js $JSLIB
+# cp $BASE/angular-sanitize/angular-sanitize.min.js $JSLIB
 cp $BASE/bootstrap/dist/js/bootstrap.min.js $JSLIB
 cp $BASE/bootstrap/dist/css/bootstrap.min.css $CSSLIB
 cp $BASE/bootstrap/fonts/* $FONT
@@ -36,3 +36,5 @@ cp $BASE/angulike/angulike.js $JSLIB
 cp $BASE/angular-bootstrap/ui-bootstrap-tpls.min.js $JSLIB
 cp $BASE/ngprogress/build/ngprogress.min.js $JSLIB
 cp $BASE/ngprogress/ngProgress.css $CSSLIB
+cp $BASE/angular-cookie-law/dist/angular-cookie-law.min.css $CSSLIB
+cp $BASE/angular-cookie-law/dist/angular-cookie-law.min.js $JSLIB

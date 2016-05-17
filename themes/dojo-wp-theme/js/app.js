@@ -21,7 +21,8 @@ var myApp = angular.module('PisaCoderDojo', [
     'angulike',
     'angulartics',
     'angulartics.google.analytics',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angular-cookie-law'
   ]);
 
   myApp.run(['$rootScope', 'progress', '$location', 'TitleService',

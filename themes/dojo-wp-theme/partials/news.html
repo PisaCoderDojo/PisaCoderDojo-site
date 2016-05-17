@@ -1,53 +1,55 @@
 <div class="container container-fluid">
-  <div class="col-sm-9">
-    <div ng-repeat="post in news | orderBy:orderProp" class="blog-post">
-      <a ng-href="news/{{post.slug}}">
-        <h2 class="blog-post-title" ng-bind="post.title.rendered"></h2>
-      </a>
-      <div class="row">
-        <div class="blog-post-meta col-sm-6">
-          <span class="glyphicon glyphicon-user"></span>
-          <span ng-bind="post.author_name"></span>
-          <span class="glyphicon glyphicon-time"></span>
-          <span ng-bind="post.date | date:'medium'"></span>
+    <div class="col-sm-9">
+        <div ng-repeat="post in news | orderBy:orderProp" class="blog-post">
+            <a ng-href="news/{{post.slug}}">
+                <h2 class="blog-post-title" ng-bind="post.title.rendered"></h2>
+            </a>
+            <div class="row">
+                <div class="blog-post-meta col-sm-6">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span ng-bind="post.author_name"></span>
+                    <span class="glyphicon glyphicon-time"></span>
+                    <span ng-bind="post.date | date:'medium'"></span>
+                </div>
+            </div>
+            <div class="row">
+                <cookie-law-wait>
+                    <div class="blog-post-social col-xs-5">
+                        <span fb-like="post.link"></span>
+                    </div>
+                    <div class="blog-post-social col-xs-2">
+                        <span tweet="post.title.rendered" tweet-url="post.link"></span>
+                    </div>
+                </cookie-law-wait>
+            </div>
+            <img ng-src="{{post.img}}" />
+            <div ng-bind-html="post.excerpt.rendered" class="blog-post-body"></div>
+            <!--<a ng-href="news/{{post.id}}">(continua...)</a>-->
         </div>
-      </div>
-      <div class="row">
-        <div class="blog-post-social col-xs-5">
-          <span fb-like="post.link"></span>
-        </div>
-        <div class="blog-post-social col-xs-2">
-          <span tweet="post.title.rendered" tweet-url="post.link"></span>
-        </div>
-      </div>
-      <img ng-src="{{post.img}}"/>
-      <div ng-bind-html="post.excerpt.rendered" class="blog-post-body"></div>
-      <!--<a ng-href="news/{{post.id}}">(continua...)</a>-->
     </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="search-bar">
-      <h4>Search</h4>
-      <input ng-model="query" ng-focus="isFocused=true" ng-keyup="search($event)"></input>
-      <!--Sort by:
+    <div class="col-sm-3">
+        <div class="search-bar">
+            <h4>Search</h4>
+            <input ng-model="query" ng-focus="isFocused=true" ng-keyup="search($event)"></input>
+            <!--Sort by:
       <select ng-model="orderProp">
         <option value="title">Alfabetico</option>
         <option value="id">Più recente</option>
       </select>-->
-    </div>
-    <div class="tag-cloud">
-      <h4>Tags</h4>
-      <ul class="nav nav-pills nav-stacked">
-        <li ng-class="{active : -1==currentTag}" role="presentation">
-          <!--<span class="badge" ng-bind="tag.count"></span>-->
-          <a href="news">Tutti</a>
-        </li>
-        <li ng-repeat="tag in tags" ng-class="{active : tag.name==currentTag}" role="presentation">
-          <a ng-href="news?tag={{tag.name}}">{{tag.name}}
+        </div>
+        <div class="tag-cloud">
+            <h4>Tags</h4>
+            <ul class="nav nav-pills nav-stacked">
+                <li ng-class="{active : -1==currentTag}" role="presentation">
+                    <!--<span class="badge" ng-bind="tag.count"></span>-->
+                    <a href="news">Tutti</a>
+                </li>
+                <li ng-repeat="tag in tags" ng-class="{active : tag.name==currentTag}" role="presentation">
+                    <a ng-href="news?tag={{tag.name}}">{{tag.name}}
             <span class="badge" ng-bind="tag.count"></span>
           </a>
-        </li>
-      </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </div>

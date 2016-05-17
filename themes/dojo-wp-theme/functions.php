@@ -81,6 +81,14 @@ function my_scripts() {
 		'ui-bootstrap',
 		get_stylesheet_directory_uri() . '/lib/js/ui-bootstrap-tpls.min.js'
 	);
+	wp_enqueue_script(
+		'angular-cookie-law_js',
+		get_stylesheet_directory_uri() . '/lib/js/angular-cookie-law.min.js'
+	);
+	wp_enqueue_style(
+		'angular-cookie-law_css',
+		get_stylesheet_directory_uri() . '/lib/css/angular-cookie-law.min.css'
+	);
 
 	//JS third-party
 	wp_enqueue_script(

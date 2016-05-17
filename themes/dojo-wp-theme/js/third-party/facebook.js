@@ -15,5 +15,4 @@ window.fbAsyncInit = function () {
   js.id = id;
   js.src = "//connect.facebook.net/it_IT/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
-  console.log("FACEBOOK");
 }(document, 'script', 'facebook-jssdk'));
