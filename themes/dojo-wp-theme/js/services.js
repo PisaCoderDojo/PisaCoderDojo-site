@@ -1,7 +1,7 @@
 (function() {
   "use strict";
-  const LEGACY_API = '/legacy_api';
-  const WP_API = '/wp-json/wp/v2';
+  var LEGACY_API = '/legacy_api';
+  var WP_API = '/wp-json/wp/v2';
 
   angular.module('coderDojoServices', [])
     .factory('newsService', ['$http', function($http) {
