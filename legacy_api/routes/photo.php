@@ -23,15 +23,17 @@ Class Photo {
 
   public static function create($app){
     // Get book with ID
-    $app->get('/:id', function ($id) {
+    $app->get('/:id', function ($id) use($app) {
+      $after = $app->request()->get('after');
       $request = new FacebookRequest(
         self::getSession(),
         'GET',
-        '/'.$id.'/photos'
+        // '/'.$id.'/photos?limit=5000'
+      "/$id/photos?pretty=1&limit=25&after=$after"
       );
       $response = $request->execute();
       $graphObject = $response->getGraphObject();
-      echo json_encode($graphObject->asArray()['data']);
+      echo json_encode($graphObject->asArray());
     });
 
     $app->get('/', function() use($app){

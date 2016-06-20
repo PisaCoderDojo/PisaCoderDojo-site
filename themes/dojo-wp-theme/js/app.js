@@ -22,7 +22,8 @@ var myApp = angular.module('PisaCoderDojo', [
     'angulartics',
     'angulartics.google.analytics',
     'ui.bootstrap',
-    'angular-cookie-law'
+    'angular-cookie-law',
+    'infinite-scroll'
   ]);
 
   myApp.run(['$rootScope', 'progress', '$location', 'TitleService',
@@ -155,6 +156,9 @@ var myApp = angular.module('PisaCoderDojo', [
           resolve: {
             album: function(albumsService, $route) {
               return albumsService.getAlbum($route.current.params.id);
+            },
+            albumid: function($route){
+              return $route.current.params.id;
             }
           }
         })

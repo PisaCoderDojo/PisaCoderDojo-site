@@ -205,10 +205,10 @@
             url: LEGACY_API+'/album'
           });
         },
-        getAlbum: function(id) {
+        getAlbum: function(id, after) {
           return $http({
             method: 'GET',
-            url: LEGACY_API+'/album/' + id
+            url: LEGACY_API+'/album/' + id + (after?'?after='+after:'')
           });
         }
       };
