@@ -59,7 +59,8 @@
             <!--<li ng-class="{ active: isActive('/calendar') }"><a href="calendar">Calendario</a></li>-->
             <li ng-class="{ active: isActive('/albums') }"><a href="albums">Dojo Gallery</a></li>
             <li role="presentation" class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              <a href="https://drive.google.com/drive/folders/0B8F2SIXsJf8_OFk3SktMQ1UwR1k?usp=sharing" target="_blank">Risorse</a>
+              <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 Risorse <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
@@ -68,7 +69,7 @@
                     <span ng-bind="cat.name"></span>
                   </a>
                 </li>
-              </ul>
+              </ul> -->
             </li>
             <li ng-class="{ active: isActive('/about') }"><a href="about">Mentori</a></li>
             <li role="presentation" class="dropdown">
