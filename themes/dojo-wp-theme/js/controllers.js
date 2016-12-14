@@ -126,10 +126,23 @@
         };
       }
     ])
-    .controller('albumCtrl', ['$scope', 'album',
-      function($scope, album) {
-        $scope.album = album.data;
-        //console.log(album.data);
+    .controller('albumCtrl', ['$scope', 'album','albumid', 'albumsService',
+      function($scope, album, albumid, albumsService) {
+        $scope.busy = false;
+        $scope.paging = album.data.paging;
+        $scope.album = album.data.data;
+
+        $scope.getMore = function(){
+          console.log('More!');
+          if (!$scope.busy && $scope.paging.next !== undefined){
+            $scope.busy =  true;
+            albumsService.getAlbum(albumid, $scope.paging.cursors.after).success(function(data){
+              $scope.album = $scope.album.concat(data.data);
+              $scope.paging = data.paging;
+              $scope.busy = false;
+            });
+          }
+        };
       }
     ])
     .controller('aboutCtrl', ['$scope', 'actualMentors', 'oldMentors',

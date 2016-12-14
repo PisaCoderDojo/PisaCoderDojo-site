@@ -89,6 +89,10 @@ function my_scripts() {
 		'angular-cookie-law_css',
 		get_stylesheet_directory_uri() . '/lib/css/angular-cookie-law.min.css'
 	);
+	wp_enqueue_script(
+		'ng-infinite-scroll',
+		get_stylesheet_directory_uri() . '/lib/js/ng-infinite-scroll.min.js'
+	);
 
 	//JS third-party
 	wp_enqueue_script(
