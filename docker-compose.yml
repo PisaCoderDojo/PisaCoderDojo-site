@@ -1,24 +1,30 @@
-dojo_wp:
-  image: wordpress
-  ports:
-    - "8080:80"
-  links:
-    - dojo_db:mysql
-  volumes:
-    - "./themes/dojo-wp-theme:/var/www/html/wp-content/themes/dojo-wp-theme"
-    - "./plugins/rest-api:/var/www/html/wp-content/plugins/rest-api"
-    - "./legacy_api:/var/www/html/legacy_api"
+version: '3'
 
-dojo_db_data:
-  image: mysql
-  entrypoint: /bin/bash
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     environment:
+       MYSQL_ROOT_PASSWORD: rpassword
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: dojo
+       MYSQL_PASSWORD: pass
 
-dojo_db:
-  image: mysql
-  volumes_from:
-    - dojo_db_data
-  environment:
-    MYSQL_ROOT_PASSWORD: rpassword
-    MYSQL_DATABASE: wordpress
-    MYSQL_USER: dojo
-    MYSQL_PASSWORD: pass
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "8000:80"
+     volumes:
+       - "./themes/dojo-wp-theme:/var/www/html/wp-content/themes/dojo-wp-theme"
+       - "./plugins/rest-api:/var/www/html/wp-content/plugins/rest-api"
+       - "./legacy_api:/var/www/html/legacy_api"
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: dojo
+       WORDPRESS_DB_PASSWORD: pass
+
+volumes:
+    db_data:

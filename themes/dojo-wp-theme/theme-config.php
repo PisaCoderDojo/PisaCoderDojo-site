@@ -1,6 +1,6 @@
 <?php
 
-define("EVENTBRITE_URL", "http://");
-define("EVENTBRITE_DATE", "02-20-2016");
+define("EVENTBRITE_URL", "https://");
+define("EVENTBRITE_DATE", "06-21-2017");
 
 ?>

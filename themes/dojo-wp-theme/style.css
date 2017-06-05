@@ -198,8 +198,8 @@ body {
   transform: scale(-1, 1);
 }
 .eventbrite-button {
-  float: right;
-  text-align: center;
+  /*float: right;*/
+  text-align: right;
 }
 .eventbrite-button img {
   /*margin-top:10px;*/

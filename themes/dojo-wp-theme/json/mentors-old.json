@@ -7,5 +7,23 @@
       "begin": "marzo 2015",
       "end": "giugno 2015"
     }
+  },
+  {
+    "name":"Lapo Frati",
+    "text":"/*TODO: mandare la biografia a luca*/",
+    "img":"lapo.jpg",
+    "date": {
+      "begin": "settembre 2015",
+      "end": "giugno 2016"
+    }
+  },
+  {
+    "name":"Mario Viti",
+    "text":"Laureando in Informatica presso l'Università di Pisa, ha precedentemente conseguito il diploma in arti multimediali e grafica all'Accademia di Belle Arti di Carrara. Originario di Massa Carrara ha una passione sconfinata per musica, disegno, cartoni animati e videogiochi.",
+    "img":"mario.jpg",
+    "date": {
+      "begin": "settembre 2015",
+      "end": "giugno 2016"
+    }
   }
 ]

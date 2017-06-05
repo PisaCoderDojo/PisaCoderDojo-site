@@ -2,25 +2,24 @@
   <div class="row">
     <h2 class="col-sm-12">Partecipa!</h2>
     <div class="col-sm-8 text-justify">
-      <em>Pisa</em> CoderDojo si riunisce una volta al mese a 
-      <a href="https://www.google.it/maps/place/SMSBiblio+-+Biblioteca+Comunale+di+Pisa/@43.706262,10.4159866,17z/data=!4m2!3m1!1s0x12d591ed44ba8921:0x141398028786f918" target="_blank">SMS Biblio</a>,
-      controlla il nostro calendario e acquista il biglietto gratuito su Eventbrite.
+      <em>Pisa</em> CoderDojo si riunisce una volta al mese controlla il nostro calendario e acquista il biglietto gratuito su Coderdojo Zen.
     </div>
     <div class="col-sm-4">
       <div class="eventbrite-button">
         <div ng-show="eventIsSet">
+          <!-- <p></p> -->
           <a href="{{ eventBrite }}" target="_blank">
-            <img src="https://www.eventbrite.it/custombutton?eid=16099774860" alt="Eventbrite - Pisa CoderDojo 1" />
+            <!-- <img src="https://www.eventbrite.it/custombutton?eid=16099774860" alt="Eventbrite - Pisa CoderDojo 1" /> -->
+            <button type="button" class="btn btn-success"><b>Prenota un posto</b><br/>mancano {{ nextEvent }} giorni al prossimo evento</button>
           </a>
-          <p>mancano {{ nextEvent }} giorni al prossimo evento</p>
         </div>
         <div ng-hide="eventIsSet">
-          <p>attualmente non ci sono eventi in programma.</p>
+          <button type="button" class="btn btn-warning">Non ci sono eventi in programma</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-sm-12">
       <h2>Dojo@Scuola!</h2>
       <div class="text-justify">
@@ -28,7 +27,7 @@
         <br/>Sempre in gamba!
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="row">
     <div class="col-sm-6">
       <div class="text-justify">
