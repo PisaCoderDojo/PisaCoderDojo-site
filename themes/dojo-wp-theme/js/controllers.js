@@ -134,26 +134,40 @@
 
         $scope.getMore = function(){
           console.log('More!');
+          console.log($scope.album)
+
           if (!$scope.busy && $scope.paging.next !== undefined){
             $scope.busy =  true;
             albumsService.getAlbum(albumid, $scope.paging.cursors.after).success(function(data){
               $scope.album = $scope.album.concat(data.data);
+              console.log($scope.album)
               $scope.paging = data.paging;
               $scope.busy = false;
             });
           }
         };
+        $scope.getImg = function(id) {
+          return 'https://graph.facebook.com/' + id + '/picture';
+        };
       }
     ])
     .controller('aboutCtrl', ['$scope', 'actualMentors', 'oldMentors',
       function($scope, actualMentors, oldMentors) {
+        var mentors = actualMentors.data;
+        $scope.champion = mentors[0];
+        $scope.people = mentors.slice(1);
+        $scope.peopleOld = oldMentors.data;
+
+        $scope.formatDate = function(date) {
+          return '(' + date.begin + '-' + date.end + ')';
+        };
         $scope.getImgUrl = function(name){
           return myLocalized.img + 'personal/' + name;
         };
-        $scope.people = actualMentors.data;
-        $scope.peopleOld = oldMentors.data;
-        $scope.formatDate = function(date) {
-          return '(' + date.begin + '-' + date.end + ')';
+        $scope.sortBySurname = function(p) {
+          var slitName = p.name.split(' ');
+          console.log(slitName[slitName.length - 1]);
+          return slitName[slitName.length - 1];
         };
       }
     ])
