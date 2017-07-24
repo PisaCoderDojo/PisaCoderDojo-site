@@ -72,7 +72,7 @@
               </ul> -->
             </li>
             <li ng-class="{ active: isActive('/about') }"><a href="about">Mentori</a></li>
-            <li role="presentation" class="dropdown">
+            <!-- <li role="presentation" class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 Ninja <span class="caret"></span>
               </a>
@@ -83,8 +83,8 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li ng-class="{ active: isActive('/mentor') }"><a href="mentor">Diventa Mentore</a></li>
+            </li> -->
+            <!-- <li ng-class="{ active: isActive('/mentor') }"><a href="mentor">Diventa Mentore</a></li> -->
             <li ng-class="{ active: isActive('/contact') }"><a href="contact">Contatti</a></li>
           </ul>
         </div>
