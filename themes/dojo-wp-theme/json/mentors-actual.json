@@ -24,11 +24,6 @@
         "img": "davide_b.jpg"
     },
     {
-        "name": "Andrea Madotto",
-        "text": "Laureato in Informatica all'Università di Perugia, ha perfezionato i sui studi ad Hong Kong ottenendo un Master of Science in Sistemi di Informazione Avanzati. Attualmente studia la sua seconda laurea magistrale in Informatica all'Università di Pisa. Originario di Perugia ha un grande passione per l’algoritmica e l’intelligenza artificiale.",
-        "img": "andrea.jpg"
-    },
-    {
         "name": "Chiara Zamberti",
         "text": "Laureata in Informatica Umanistica all'Università di Pisa, realizza siti web e ripara PC e telefoni sia a livello software che hardware. Originaria di Gaeta, cresciuta nel mondo del Web e dei forum fin da quando aveva 12 anni, è di recente affascinata dell'e-learning, dalla linguistica computazionale e dall'impiego di strumenti interattivi nella didattica.",
         "img": "chiara_zamberti.jpg"
@@ -37,5 +32,20 @@
         "name": "Valentina Fiorini",
         "text": "Laureanda in Informatica Umanistica presso l'Università di Pisa. Ha conseguito il diploma come perito informatico. Originaria di Arezzo, è una grande appassionata di grafica e di disegno.",
         "img": "valentina_fiorini.jpg"
+    },
+    {
+        "name": "Giulio Auriemma",
+        "text": "Laureato in informatica alla Federico II di Napoli, di dov'è originario, e attualmente iscritto alla Laurea Magistrale in Informatica presso l'università di Pisa. Sostenitore dall'informatica responsabile e del processo di evoluzione tecnologica della quotidianità. Da bravo informatico ama i videogames e il rock'n'roll.",
+        "img": "giulio_auriemma.jpg"
+    },
+    {
+        "name": "Lucio Messina",
+        "text": "Toscano di nascita, è iscritto alla Laurea Magistrale in Informatica. Suona la chitarra e il clarinetto, ama i giochi da tavolo e l'associazionismo. Nel tempo libero, studia anche un pochino. Dopo soli cinque minuti di conversazione ti farà un indovinello oppure cercherà di convincerti che l'informatica è una scienza. Ha una treccina ma non sogna di diventare Jedi.",
+        "img": "lucio_messina.jpg"
+    },
+    {
+        "name": "Ludovica Pannitto",
+        "text": "Nata a Campobasso, approda a Pisa con una grande passione per la Matematica, e ne scopre un'altra per la Linguistica. Dopo essersi laureata alla triennale in Informatica Umanistica, sta proseguendo i suoi studi in Linguistica Computazionale. Fuori dalle aule universitarie, ama gli indovinelli, i giochi da tavolo, ma non le piace il gelato al cioccolato.",
+        "img": "ludovica_pannitto.jpg"
     }
 ]

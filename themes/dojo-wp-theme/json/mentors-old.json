@@ -25,5 +25,14 @@
       "begin": "settembre 2015",
       "end": "giugno 2016"
     }
+  },
+  {
+    "name": "Andrea Madotto",
+    "text": "Laureato in Informatica all'Università di Perugia, ha perfezionato i sui studi ad Hong Kong ottenendo un Master of Science in Sistemi di Informazione Avanzati. Attualmente studia la sua seconda laurea magistrale in Informatica all'Università di Pisa. Originario di Perugia ha un grande passione per l’algoritmica e l’intelligenza artificiale.",
+    "img": "andrea.jpg",
+    "date": {
+      "begin": "febbraio 2016",
+      "end": "giugno 2017"
+    }
   }
 ]
