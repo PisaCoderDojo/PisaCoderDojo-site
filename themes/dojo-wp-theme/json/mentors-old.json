@@ -2,37 +2,31 @@
   {
     "name":"Vittorio Massaro",
     "text":"Laureato in Informatica all'Università di Pisa, attualmente frequenta il corso magistrale di Informatica a Pisa. Grande appassionato di programmazione e matematica, è convinto che saper programmare sia utile non solo davanti ad un PC ma, e soprattutto, nella vita di tutti i giorni.",
-    "img":"vittorio.jpg",
-    "date": {
-      "begin": "marzo 2015",
-      "end": "giugno 2015"
-    }
+    "img":"vittorio.jpg"
   },
   {
     "name":"Lapo Frati",
     "text":"/*TODO: mandare la biografia a luca*/",
-    "img":"lapo.jpg",
-    "date": {
-      "begin": "settembre 2015",
-      "end": "giugno 2016"
-    }
+    "img":"lapo.jpg"
   },
   {
     "name":"Mario Viti",
     "text":"Laureando in Informatica presso l'Università di Pisa, ha precedentemente conseguito il diploma in arti multimediali e grafica all'Accademia di Belle Arti di Carrara. Originario di Massa Carrara ha una passione sconfinata per musica, disegno, cartoni animati e videogiochi.",
-    "img":"mario.jpg",
-    "date": {
-      "begin": "settembre 2015",
-      "end": "giugno 2016"
-    }
+    "img":"mario.jpg"
   },
   {
     "name": "Andrea Madotto",
     "text": "Laureato in Informatica all'Università di Perugia, ha perfezionato i sui studi ad Hong Kong ottenendo un Master of Science in Sistemi di Informazione Avanzati. Attualmente studia la sua seconda laurea magistrale in Informatica all'Università di Pisa. Originario di Perugia ha un grande passione per l’algoritmica e l’intelligenza artificiale.",
-    "img": "andrea.jpg",
-    "date": {
-      "begin": "febbraio 2016",
-      "end": "giugno 2017"
-    }
+    "img": "andrea.jpg"
+  },
+  {
+    "name": "Francesco Feola",
+    "text": "Laureato magistrale in Lingua e Letteratura Italiana all’Università di Pisa, dottorando di ricerca in Studi Italianistici presso il medesimo ateneo, giornalista cartaceo e online, scrittore qualche volta, ha aderito a Pisa CoderDojo per la sua propensione all’insegnamento, e per la consapevolezza che nessun campo ormai può fare a meno dell’informatica, neppure quello umanistico.",
+    "img": "francesco.jpg"
+  },
+  {
+    "name": "Davide Balestri",
+    "text": "Laureando in Ingegneria Gestionale presso l'Università di Pisa. Appassionato fin da piccolo all'informatica e a tutto ciò che riguarda la multimedialità. Il suo desiderio é riuscire a far conoscere le potenzialità degli strumenti informatici che ci circondano in maniera semplice e alla portata di tutti.",
+    "img": "davide_b.jpg"
   }
 ]
