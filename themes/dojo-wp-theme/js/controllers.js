@@ -158,21 +158,21 @@
         $scope.people = mentors.slice(1);
         $scope.peopleOld = oldMentors.data;
 
-        $scope.formatDate = function(date) {
-          return '(' + date.begin + '-' + date.end + ')';
-        };
+        // $scope.formatDate = function(date) {
+        //   return '(' + date.begin + '-' + date.end + ')';
+        // };
         $scope.getImgUrl = function(name){
           return myLocalized.img + 'personal/' + name;
         };
         $scope.sortBySurname = function(p) {
           var slitName = p.name.split(' ');
-          console.log(slitName[slitName.length - 1]);
+          // console.log(slitName[slitName.length - 1]);
           return slitName[slitName.length - 1];
         };
       }
     ])
-    .controller('mentorCtrl', ['$scope', '$http',
-      function($scope, $http) {
+    .controller('mentorCtrl', ['$scope', '$http', 'mailService',
+      function($scope, $http, mailService) {
         $scope.selection = [{
           name: "Informatica",
           value: false
@@ -219,22 +219,18 @@
           return stringa;
         };
         $scope.send = function() {
-          var t = '<b>name:</b> ' + $scope.name +
+          var body = '<b>name:</b> ' + $scope.name +
             '<br/> <b>age:</b> ' + $scope.age +
             '<br/> <b>selection:</b> ' + getValue($scope.selection) +
             '<br/> <b>aboutyou:</b> ' + $scope.aboutyou +
             '<br/> <b>howknow:</b> ' + getValue($scope.howyouknow);
-          //console.log($scope.mail+' '+t);
-          $http({
-            method: 'POST',
-            url: 'api/sendmail',
-            data: {
-              "mail": $scope.mail,
-              'subject': "New mentor want to join us",
-              'text': t
-            }
-          }).success(function(data) {
-            //console.log(data);
+          console.log($scope.mail + ' ' + body);
+          mailService.send(
+            $scope.mail,
+            "New mentor want to join us",
+            body
+          ).success(function(data) {
+            console.log(data);
             if (data == 'true')
               $scope.isSend = true;
           });
