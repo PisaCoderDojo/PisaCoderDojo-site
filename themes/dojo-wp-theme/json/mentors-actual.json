@@ -37,5 +37,15 @@
         "name": "Ludovica Pannitto",
         "text": "Nata a Campobasso, approda a Pisa con una grande passione per la Matematica, e ne scopre un'altra per la Linguistica. Dopo essersi laureata alla triennale in Informatica Umanistica, sta proseguendo i suoi studi in Linguistica Computazionale. Fuori dalle aule universitarie, ama gli indovinelli, i giochi da tavolo, ma non le piace il gelato al cioccolato.",
         "img": "ludovica_pannitto.jpg"
+    },
+    {
+        "name": "Salvatore Catroppa",
+        "text": "Studia Informatica all'Università di Pisa, ha le mani sempre in pasta a risolve i problemi di tutti. Calabrese di nascita, ma immemore delle sue origini è ingenuamente appassionato di stampa 3D, teatro e comunicazione. Spera di riuscire un giorno nell'impresa (titanica) di avvicinare chiunque incontra alle sue passioni.",
+        "img": "salvatore_catroppa.jpg"
+    },
+    {
+        "name": "Salvatore Ventrone",
+        "text": "Nato a Pantelleria ma cresciuto a Bomarzo. Perito Informatico, studente di Informatica Umanistica. Appassionato di Software Libero, tecnologia e privacy. Programma da quando aveva 14 anni, il suo obbiettivo è diffondere l'amore per la programmazione.",
+        "img": "salvatore_ventrone.jpg"
     }
 ]
