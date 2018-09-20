@@ -67,7 +67,7 @@ function my_scripts() {
 	);
 	wp_enqueue_script(
 		'angulartics-google',
-		get_stylesheet_directory_uri() . '/lib/js/angulartics-google-analytics.min.js'
+		get_stylesheet_directory_uri() . '/lib/js/angulartics-ga.min.js'
 	);
 	wp_enqueue_script(
 		'ngprogress',
@@ -83,7 +83,7 @@ function my_scripts() {
 	);
 	wp_enqueue_script(
 		'angular-cookie-law_js',
-		get_stylesheet_directory_uri() . '/lib/js/angular-cookie-law.min.js'
+		get_stylesheet_directory_uri() . '/lib/js/angular-cl.min.js'
 	);
 	wp_enqueue_style(
 		'angular-cookie-law_css',

@@ -36,5 +36,5 @@ cp $BASE/angular-bootstrap/ui-bootstrap-tpls.min.js $JSLIB
 cp $BASE/ngprogress/build/ngprogress.min.js $JSLIB
 cp $BASE/ngprogress/ngProgress.css $CSSLIB
 cp $BASE/angular-cookie-law/dist/angular-cookie-law.min.css $CSSLIB
-cp $BASE/angular-cookie-law/dist/angular-cookie-law.min.js $JSLIB
+cp $BASE/angular-cookie-law/dist/angular-cookie-law.min.js $JSLIB/angular-cl.min.js
 cp $BASE/ngInfiniteScroll/build/ng-infinite-scroll.min.js $JSLIB
