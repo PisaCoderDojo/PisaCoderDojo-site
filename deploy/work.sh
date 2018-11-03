@@ -19,7 +19,6 @@ fi
 
 git clone $GIT_URL $TMP
 cd $TMP
-touch $APP_DIR/wp-content/themes/test
 cp -r themes/dojo-wp-theme $APP_DIR/wp-content/themes/
 cp -r legacy_api $APP_DIR/
 rm -r $TMP
