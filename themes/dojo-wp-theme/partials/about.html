@@ -5,7 +5,7 @@
     <div class="about-profile">
       <div class="row">
         <div class="col-sm-3">
-          <img ng-src="{{getImgUrl(champion.img)}}" class="img-circle img-responsive"/>
+          <img ng-src="{{getImgUrl(champion.img)}}" class="img-circle img-responsive" />
         </div>
         <div class="col-sm-9">
           <h3 ng-bind="champion.name"></h3>
@@ -13,13 +13,13 @@
         </div>
       </div>
     </div>
-    
-    <br/>
+
+    <br />
     <h3>Mentori</h3>
     <div ng-repeat="p in people | orderBy:sortBySurname" class="about-profile">
       <div class="row">
         <div class="col-sm-3">
-          <img ng-src="{{getImgUrl(p.img)}}" class="img-circle img-responsive"/>
+          <img ng-src="{{getImgUrl(p.img)}}" class="img-circle img-responsive" />
         </div>
         <div class="col-sm-9">
           <h3 ng-bind="p.name"></h3>
@@ -31,15 +31,11 @@
 
   <div class="about-old">
     <h3>Hanno collaborato con noi</h3>
-    <div ng-repeat="p in peopleOld | orderBy:sortBySurname" class="about-profile">
-      <div class="row">
+    <div class="row">
+      <div ng-repeat="p in peopleOld | orderBy:sortBySurname" class="about-profile">
         <div class="col-sm-3">
-          <img ng-src="{{getImgUrl(p.img)}}" class="img-circle img-responsive"/>
-        </div>
-        <div class="col-sm-9">
-          <h3 ng-bind="p.name"></h3>
-          <span ng-bind="p.text" class="text-justify"></span>
-          <!-- <span ng-bind="formatDate(p.date)"></span> -->
+          <img style="height:100px" ng-src="{{getImgUrl(p.img)}}" class="img-circle img-responsive" />
+          <h4 class="text-center" ng-bind="p.name"></h4>
         </div>
       </div>
     </div>
