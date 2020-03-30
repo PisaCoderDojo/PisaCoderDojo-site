@@ -9,9 +9,9 @@ REMOTE_SCRIPT_PATH=/tmp/deploy-pisacoderdojo.sh
 
 ### Library ###
 
-function run()
+run()
 {
-  echo "Running: $@"
+  echo "Running: $*"
   "$@"
 }
 

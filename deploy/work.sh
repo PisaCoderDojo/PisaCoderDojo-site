@@ -13,12 +13,12 @@ TMP=/tmp/dojo-site
 set -x
 
 # Pull latest code
-if ! [ -e $APP_DIR ]; then
+if ! [ -e "$APP_DIR" ]; then
   echo "ERROR: install wordpress first"
 fi
 
-git clone $GIT_URL $TMP
-cd $TMP
-cp -r themes/dojo-wp-theme $APP_DIR/wp-content/themes/
-cp -r legacy_api $APP_DIR/
-rm -r $TMP
+git clone "$GIT_URL" "$TMP"
+cd "$TMP"
+cp -r themes/dojo-wp-theme "$APP_DIR/wp-content/themes/"
+cp -r legacy_api "$APP_DIR/"
+rm -r "$TMP"
